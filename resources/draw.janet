@@ -126,6 +126,8 @@
                     50)
                  20 :gray)))
 
+(var texture nil)
+
 (defn draw-game
   [state]
   (j/begin-drawing)
@@ -140,6 +142,10 @@
       # show pause overlay when appropriate
       (when (state :pause)
         (draw-pause-overlay))))
+
+
+  (print "hello? " texture)
+  (j/draw-texture texture 20 20 :white)
   #
   (j/end-drawing)
   #

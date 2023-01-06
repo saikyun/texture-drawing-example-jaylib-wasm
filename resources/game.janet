@@ -24,7 +24,8 @@
   #
   (-> state
       u/update-game!
-      d/draw-game))
+      d/draw-game)
+    )
 
 (defn desktop
   []
@@ -44,6 +45,7 @@
   (s/init! state)
   #
   (j/init-window p/screen-width p/screen-height "Jaylib Demo")
+  (set d/texture (j/load-texture "resources/jaylib-logo.png"))
   #
   (j/init-audio-device)
   (put state :bgm (j/load-music-stream "resources/theme.ogg"))
